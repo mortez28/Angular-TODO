@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="panel">
+
+      <div class="form">
+          <label>Title:</label>
+
+          <div class="input-group">
+              <input type="text"
+                     #todo
+                     class="form-control"
+                     placeholder="Add Todo"
+                     name="todo"
+                     ngModel />
+
+              <button (click)="addTodo(todo.value); todo.value=''" class="btn-group btn-add">Add</button>
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="data">
+
+          <ul class="list-unstyled">
+              <li *ngFor="let todo of todoArray" class="todo-list">
+
+                  <label class="check-container">
+                      <input type="checkbox"
+                             #check
+                             name="Done"
+                             label="skjkjskjks"
+                             ng-model="todo.finish" />
+                      <span class="check-mark"></span>
+                      {{todo.text}}
+                  </label>
+                  <button (click)="deleteItem(todo)" class="btn-delete">Delete</button>
+
+              </li>
+
+          </ul>
+      </div>
+
+  </div>
+</div>
